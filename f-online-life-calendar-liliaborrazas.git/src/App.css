@@ -5,10 +5,11 @@
 }
 .form__container{
    height: 100vh;
+   border: 15px solid blue;
 }
 
 .date__container{
-  padding: 70px;
+  padding: 80px;
   font-size: 20px;
 }
 .inputDate{
@@ -29,7 +30,7 @@
 .inputhappy{
   margin-left: 20px;
   font-size: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 .labelHappy{
   font-size: 20px;
