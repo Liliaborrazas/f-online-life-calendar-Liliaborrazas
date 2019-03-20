@@ -1,7 +1,65 @@
-.App {
+.app {
   text-align: center;
+  background-color: cyan;
+  
+}
+.form__container{
+   height: 100vh;
 }
 
-.arrancando{
-  background: cyan;
+.date__container{
+  padding: 70px;
+  font-size: 20px;
+}
+.inputDate{
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+.status__container{
+  padding: 70px;
+  font-size: 20px;
+}
+.inputStatus{
+  margin-left: 20px;
+}
+.checkboxs{
+  margin-left: 20px;
+}
+.inputhappy{
+  margin-left: 20px;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+.labelHappy{
+  font-size: 20px;
+}
+.btn-submit{
+  margin-right: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: blue;
+  color: aliceblue;
+  font-size: 15px;
+
+}
+.btn-cancel{
+  margin-left: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: blue;
+  color: aliceblue;
+  font-size: 15px;
+   
+}
+
+
+
+.plus__button {
+  background-color: blue;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
 }
