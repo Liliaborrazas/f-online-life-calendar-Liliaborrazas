@@ -21,6 +21,7 @@ class App extends Component {
   submitDay(e) {
     e.preventDefault();
     const newDay = this.state.faces;
+    console.log(newDay)
     newDay.push(this.state.status)
     this.setState({ faces: newDay })
     console.log(newDay)
@@ -51,7 +52,7 @@ class App extends Component {
     return (
       <div className="app">
           <header className="plus__button">
-			    	<span> + </span>
+			    	<a> + </a>
 		    	</header>
           <ul>
             {this.state.faces.map((face, i) => {
@@ -70,18 +71,16 @@ class App extends Component {
             </div>
             <div className="status__container">
                 <label name="status">Estado</label>
-                <label name="happy">
-                <input className="inputStatus" type="checkbox" name="happy" onChange={this.addFace} /> :)
-                </label>
-                <label name="sad">
-                <input className="checkboxs" type="checkbox" name="sad" onChange={this.addFace}  /> :(
-                </label>
+                <input className="inputStatus" name="face" type="radio" value="happy" onChange={this.addFace} /> 
+                <label name="happy"> :) </label> 
+                <input className="checkboxs" name="face" type="radio" value="sad" onChange={this.addFace}  /> 
+                  <label name="sad">:(</label>
             </div> 
             <div className>  
                 <textarea className="inputhappy" name="happy" rows="8" cols="80" placeholder="¿Por qué es un buen día?" onChange={this.addMessage}></textarea>
             </div>
             <div className="buttons__container">
-              <button className="btn-submit" type="submit">GUARDAR</button>
+              <button className="btn-submit" type="submit" onClick={this.submitDay}>GUARDAR</button>
               <button className="btn-cancel" onClick={this.cancelButton}>CANCELAR</button>      
             </div>
           </form>
