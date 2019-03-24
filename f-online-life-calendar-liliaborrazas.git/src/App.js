@@ -17,7 +17,15 @@ class App extends Component {
     this.addMessage = this.addMessage.bind(this);
     this.cancelButton = this.cancelButton.bind(this);
   }
-  
+///////////////////////////////
+  componentDidMount(){
+    if(localStorage.getItem("infoCalendar")){
+      this.setState(
+        {faces: JSON.parse(localStorage.getItem("infoCalendar"))}
+      )
+    }
+  }
+  ////////////////////////////
   submitDay(e) {
     e.preventDefault();
     const newDay = this.state.faces;
@@ -46,8 +54,11 @@ class App extends Component {
       message: "",
     })
   }
-
-  
+////////////////////////////
+  componentDidUpdate(){
+    localStorage.setItem("infoCalendar", JSON.stringify(this.state.faces));
+  }
+  //////////////////////////////////
   render() {
     return (
       <div className="app">
