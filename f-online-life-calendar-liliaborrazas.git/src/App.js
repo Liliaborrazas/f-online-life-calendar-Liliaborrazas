@@ -14,6 +14,7 @@ class App extends Component {
       date: "",
       status: "",
       message: "",
+      
     }
     this.submitDay = this.submitDay.bind(this);
     this.addDate = this.addDate.bind(this);
@@ -30,7 +31,7 @@ class App extends Component {
     }
   }
   
-  submitDay(e) {
+  submitDay() {
     this.setState(
       {faces:[...this.state.faces,
       {date: this.state.date, 
@@ -89,7 +90,6 @@ class App extends Component {
             
             />
           }/>
-         
           </Switch>
       </div>
     );

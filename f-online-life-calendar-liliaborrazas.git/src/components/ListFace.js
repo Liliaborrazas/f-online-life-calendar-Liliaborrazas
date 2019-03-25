@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Face from '../components/Face';
 import { Link } from 'react-router-dom';
 
 
@@ -8,19 +7,24 @@ import { Link } from 'react-router-dom';
 class ListFace extends Component{
     render(){
       const {faces}=this.props;
-        return(<ul>
-        <Link to= "/formulario">
-        <button> + </button>
-        </Link>
-        {faces.length > 0 && faces.map((item)=>
-        
-          <Face
-          date= {item.date} 
-          status={item.status} 
-          message= {item.message}
-          />
-      )}
-            </ul> 
+
+        return(
+         <div className="app-calendar">
+          <Link to= "/formulario">
+          <button> + </button>
+          </Link>
+          <ul className="list">
+          {faces.length > 0 && faces.map((item, index)=>
+            
+           <li key={index}>
+            <p className="data-day">{item.date} </p>
+            <p className="data-day">{item.status} </p>
+            <p className="data-day">{item.message} </p>
+            
+            </li>
+        )}
+          </ul>
+            </div> 
          ) }
 }
 
