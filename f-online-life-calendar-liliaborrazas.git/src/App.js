@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import ListFace from './components/ListFace';
+import Form from './components/Form';
+import { Switch, Route } from 'react-router-dom';
+
 
 class App extends Component {
   constructor(props) {
@@ -29,10 +33,8 @@ class App extends Component {
   submitDay(e) {
     e.preventDefault();
     const newDay = this.state.faces;
-    console.log(newDay)
     newDay.push(this.state.status)
     this.setState({ faces: newDay })
-    console.log(newDay)
   }
 
   addDate(e) {
@@ -62,7 +64,27 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-          <header className="plus__button">
+      <header className="plus__button">
+          <h1 className="title">Calendario</h1>
+      </header>
+          <Switch>
+         <Route exact path='/' render={()=>
+            <ListFace
+            faces={this.state.faces}
+            />
+          }/>
+        <Route path='/formulario' 
+            render={()=>
+             <Form 
+             addDate={this.state.addDate} 
+             addFace={this.addFace}
+             addMessage={this.addMessage}
+             cancelButton={this.cancelButton}
+             submitDay={this.submitDay}
+            
+            />
+          }/>
+          {/* <header className="plus__button">
 			    	<a> + </a>
 		    	</header>
           <ul>
@@ -74,8 +96,8 @@ class App extends Component {
             </li>
           );
             })}	
-          </ul>
-          <form className="form__container" onSubmit>
+          </ul> */}
+          {/* <form className="form__container" onSubmit>
             <div className="date__container">
                 <label name="date">Fecha</label>
                 <input className="inputDate" type="date" name="date" onChange={this.addDate} required />
@@ -94,7 +116,8 @@ class App extends Component {
               <button className="btn-submit" type="submit" onClick={this.submitDay}>GUARDAR</button>
               <button className="btn-cancel" onClick={this.cancelButton}>CANCELAR</button>      
             </div>
-          </form>
+          </form> */}
+          </Switch>
       </div>
     );
   }
