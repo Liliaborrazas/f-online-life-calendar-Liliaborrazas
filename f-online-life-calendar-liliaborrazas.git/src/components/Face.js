@@ -7,11 +7,9 @@ class Face extends Component{
     
         return (
             <div>
-                <p className="day"
-                    title={this.props.date + " " + this.props.message} 
-                >
+                <li className="day" title={this.props.date + " " + this.props.message}>
                 {this.props.state}
-                </p>
+                </li>
             </div> 
         )
     }

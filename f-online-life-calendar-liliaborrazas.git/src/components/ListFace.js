@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 class ListFace extends Component{
     render(){
       const {faces}=this.props;
-        return(<div>
+        return(<ul>
         <Link to= "/formulario">
         <button> + </button>
         </Link>
@@ -20,7 +20,7 @@ class ListFace extends Component{
           message= {item.message}
           />
       )}
-            </div> 
+            </ul> 
          ) }
 }
 
