@@ -64,3 +64,6 @@
   font-weight: bold;
   padding: 10px;
 }
+.list__calendar{
+  list-style: none;
+}
